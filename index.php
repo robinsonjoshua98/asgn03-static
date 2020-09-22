@@ -22,6 +22,10 @@
     echo "<p>The " . $fly_catcher->name . " " . $fly_catcher->can_fly() . ".</p>";
     echo "<p>The " . $kiwi->name . " " . $kiwi->can_fly() . ".</p>";    
 
+    echo 'Bird count: ' . Bird::$instance_count . '<br />';
+    echo 'Yellow-bellied Flycatcher count: ' . YellowBelliedFlyCatcher::$instance_count . '<br />';
+    echo 'Kiwi count: ' . Kiwi::$instance_count . '<br />';
+
 ?>
     </body>
 </html>
