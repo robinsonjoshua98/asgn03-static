@@ -10,7 +10,6 @@
 
 <?php 
     include 'Bird.php';
-    
     $bird = new Bird;
     echo '<p>The generic song of any bird is "' . $bird->song . '".</p>';
 
@@ -20,11 +19,23 @@
     $kiwi = new Kiwi;
     $kiwi->flying = "no";
     echo "<p>The " . $fly_catcher->name . " " . $fly_catcher->can_fly() . ".</p>";
-    echo "<p>The " . $kiwi->name . " " . $kiwi->can_fly() . ".</p>";    
+    echo "<p>The " . $kiwi->name . " " . $kiwi->can_fly() . ".</p>";   
 
+    echo '<h1>Static Example</h1>';
+    echo '<h2>Before using the create method</h2>';
     echo 'Bird count: ' . Bird::$instance_count . '<br />';
     echo 'Yellow-bellied Flycatcher count: ' . YellowBelliedFlyCatcher::$instance_count . '<br />';
     echo 'Kiwi count: ' . Kiwi::$instance_count . '<br />';
+
+    $newBird = Bird::create();
+    $newYellow = YellowBelliedFlyCatcher::create();
+    $newkiwi = Kiwi::create();
+    echo "<hr />";
+    echo '<h2>After using the create method</h2>';
+    echo 'Bird count: ' . Bird::$instance_count . '<br />';
+    echo 'Yellow-bellied Flycatcher count: ' . YellowBelliedFlyCatcher::$instance_count . '<br />';
+    echo 'Kiwi count: ' . Kiwi::$instance_count . '<br />';
+
 
 ?>
     </body>
